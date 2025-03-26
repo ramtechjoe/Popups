@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Prism.Plugin.Popups.Xaml;
 
 namespace Popups.Views;
 
@@ -11,5 +7,7 @@ public partial class TestPopupPage : ContentView
     public TestPopupPage()
     {
         InitializeComponent();
+        //Compile error
+        PopupDialogLayout.SetIsAnimationEnabled(this, true);
     }
 }

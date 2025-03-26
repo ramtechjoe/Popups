@@ -3,17 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Popups.ViewModels"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:animation="clr-namespace:Mopups.Animations;assembly=Mopups"
              x:DataType="viewModels:TestPopupPageViewModel"
+             prism:PopupDialogLayout.HasSystemPadding="True"
+             prism:PopupDialogLayout.IsAnimationEnabled="True"
+             prism:PopupDialogLayout.BackgroundInputTransparent="True"
              prism:DialogLayout.CloseOnBackgroundTapped="True"
              x:Class="Popups.Views.TestPopupPage">
     
+    <prism:PopupDialogLayout.Animation>
+        <animation:MoveAnimation PositionIn="Top" PositionOut="Bottom" />
+    </prism:PopupDialogLayout.Animation>
 
-    <Border BackgroundColor="WhiteSmoke" HeightRequest="400" WidthRequest="400" StrokeThickness="1">
-        <Grid RowDefinitions="Auto,Auto" VerticalOptions="Center">
-            <Label Text="Test Background Click" FontSize="24"/>
+    <Border>
+        <Grid RowDefinitions="Auto,Auto" VerticalOptions="Center" HorizontalOptions="Center"
+              BackgroundColor="AntiqueWhite" Padding="60">
+            <Label Text="Test Background Click" FontSize="24" />
 
-            <Button Grid.Row="1" Text="Close Dialog" Command="{Binding ClosePopupCommand}"></Button>
-        </Grid>
-    </Border>
+            <Button Grid.Row="1" Text="Close Dialog" Command="{Binding ClosePopupCommand}" Margin="0,60,0,0" />
+        </Grid></Border>
     
 </ContentView>
