@@ -11,7 +11,8 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UsePrism(prism =>
-                prism.ConfigureMopupDialogs()
+                prism
+                    .ConfigureMopupDialogs()
                     .UsePrismEssentials()
                     .RegisterTypes(PrismStartup.RegisterTypes)
                     .OnInitialized(PrismStartup.OnInitialized)

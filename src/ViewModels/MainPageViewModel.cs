@@ -15,6 +15,9 @@ public class MainPageViewModel(IDialogService dialogService) : BindableBase
             { KnownDialogParameters.CloseOnBackgroundTapped, true },
         };
         
-        dialogService.ShowDialog(nameof(TestPopupPage), parameters);
+        dialogService.ShowDialog(nameof(TestPopupPage), result =>
+        {
+            Console.WriteLine($"Dialog Result {result.Result}");
+        });
     }
 }
